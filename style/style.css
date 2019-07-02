@@ -9,3 +9,21 @@ h2 {
     padding-bottom:  5px;
     margin-bottom:  10px;
 }
+
+header {
+  background-color: rgb(255, 189, 189);
+  height: 300px;
+}
+
+
+.wrapper {
+  height: 600px;
+  background-color: rgb(182, 182, 182);
+}
+
+footer {
+    height: 200px;
+    background-color: rgb(186, 199, 252);
+
+
+}
