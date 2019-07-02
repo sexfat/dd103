@@ -1,4 +1,11 @@
 .title {
     color: rgb(0, 102, 255);
     font-size: 80px;
- }
+}
+
+h2 {
+    width: 300px;
+    border-bottom: 1px solid #000;
+    padding-bottom:  5px;
+    margin-bottom:  10px;
+}
