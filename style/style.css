@@ -27,6 +27,34 @@ footer {
 
 
 }
+
+
+
 .pic01 {
   width: 120px;
+}
+
+
+.banner {
+    background-color: #ff6d6d;
+    height: 100px;
+
+
+
+}
+.prod{
+    background-color: #ecf76f;
+    height: 100px;
+
+}
+
+
+.intro {
+
+    background-color: #8aedff;
+    height: 100px;
+
+
+
+
 }
