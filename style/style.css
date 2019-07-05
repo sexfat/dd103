@@ -5,9 +5,9 @@
 
 h2 {
     width: 300px;
-    border-bottom: 1px solid #000;
+    /* border-bottom: 1px solid #000;
     padding-bottom:  5px;
-    margin-bottom:  10px;
+    margin-bottom:  10px; */
 }
 
 header {
@@ -37,14 +37,14 @@ footer {
 
 .banner {
     background-color: #ff6d6d;
-    height: 100px;
+    height: 400px;
 
 
 
 }
 .prod{
     background-color: #ecf76f;
-    height: 100px;
+    height: 400px;
 
 }
 
@@ -52,8 +52,22 @@ footer {
 .intro {
 
     background-color: #8aedff;
-    height: 100px;
+    height: 600px;
 
+
+
+
+}
+
+
+table {
+  background-color: #dfdfdf;
+
+}
+
+
+.form {
+  height: 600px;
 
 
 
