@@ -1,13 +1,42 @@
 $fontsize : 20px;
-$color : #333;
-$fontfamily : Helvetica, sans-serif;
+$color : rgb(189, 96, 96);
+$fontfamily : Helvetica,
+sans-serif;
+$marign: 0 auto;
 
 
 body {
-    font-size: $fontsize;  
-    margin: 0;
-    padding: 20px ;
+    font-size: $fontsize;
+    margin: $marign;
+    padding: 20px;
     color: $color;
     font-family: $fontfamily;
+    
 
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+
+        header {
+            background-color: #333;
+            height: 300px;
+
+            .logo {
+                width: 300px;
+                height: 20px;
+            }
+
+        }
+
+        .content {
+            background-color: #fff;
+        }
+
+        footer {
+            height: 300px;
+            background-color: rgb(14, 190, 235);
+
+
+        }
+    }
 }
