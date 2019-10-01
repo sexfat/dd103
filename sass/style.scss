@@ -1,6 +1,13 @@
+$fontsize : 20px;
+$color : #333;
+$fontfamily : Helvetica, sans-serif;
+
+
 body {
- font-size: 12px;
- margin: 0px;
- padding: 20px;
+    font-size: $fontsize;  
+    margin: 0;
+    padding: 20px ;
+    color: $color;
+    font-family: $fontfamily;
 
 }
