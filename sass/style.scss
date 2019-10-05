@@ -1,6 +1,10 @@
 @import "var";
 @import "mixins";
 @import "reset";
+@import "desktop";
+@import "medium";
+@import "small";
+
 
 
 
@@ -159,18 +163,98 @@ body {
         background-color: $bgc;
         @content
     }
-};
+}
+
+;
 
 
-@include section('01' , #333){
-   h2 {
-       color: #00ff2a;
-   }
+@include section('01', #333) {
+    h2 {
+        color: #00ff2a;
+    }
 }
 
 
-@include section('02' , rgb(252, 0, 0)){
+@include section('02', rgb(252, 0, 0)) {
     h2 {
         color: #00b7ff;
     }
- }
+}
+
+;
+
+@for $i from 1 through 10 {
+    .for_#{$i} {
+        margin-top: $i * 1px;
+    }
+}
+
+
+@mixin grid($num) {
+    @for $i from 1 through $num {
+
+        .col-#{$i} {
+            width: ($i / $num) * 100%
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    @include grid(12);
+}
+
+
+@mixin aa() {
+    .aa {
+        font-size: 10px;
+        // margin: 10px 
+        @content
+    }
+}
+
+;
+
+
+.wraaper {
+    @include aa() {
+        margin: 10px;
+    }
+
+    ;
+}
+
+.section {
+    @include aa();
+}
+
+
+@mixin body ($content) {
+    .#{$content} {
+        @content
+    }
+}
+
+;
+
+
+@include body(wrapper) {
+    h1 {
+        font-size: 30px;
+    }
+}
+
+;
+
+@include body(aboutus) {
+    h1 {
+        font-size: 30px;
+    }
+}
+
+
+
+
+
+
+

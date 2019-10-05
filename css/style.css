@@ -48,6 +48,24 @@ table {
   border-spacing: 0;
 }
 
+@media all and (min-width: 1024px) {
+  body {
+    font-size: 13px;
+  }
+}
+
+@media all and (min-width: 950px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  body {
+    font-size: 40px;
+  }
+}
+
 body {
   font-size: 20px;
   margin: 10px 0 0;
@@ -228,5 +246,101 @@ h5 {
 
 .section_02 h2 {
   color: #00b7ff;
+}
+
+.for_1 {
+  margin-top: 1px;
+}
+
+.for_2 {
+  margin-top: 2px;
+}
+
+.for_3 {
+  margin-top: 3px;
+}
+
+.for_4 {
+  margin-top: 4px;
+}
+
+.for_5 {
+  margin-top: 5px;
+}
+
+.for_6 {
+  margin-top: 6px;
+}
+
+.for_7 {
+  margin-top: 7px;
+}
+
+.for_8 {
+  margin-top: 8px;
+}
+
+.for_9 {
+  margin-top: 9px;
+}
+
+.for_10 {
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .col-1 {
+    width: 8.33333%;
+  }
+  .col-2 {
+    width: 16.66667%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33333%;
+  }
+  .col-5 {
+    width: 41.66667%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33333%;
+  }
+  .col-8 {
+    width: 66.66667%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33333%;
+  }
+  .col-11 {
+    width: 91.66667%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+}
+
+.wraaper .aa {
+  font-size: 10px;
+  margin: 10px;
+}
+
+.section .aa {
+  font-size: 10px;
+}
+
+.wrapper h1 {
+  font-size: 30px;
+}
+
+.aboutus h1 {
+  font-size: 30px;
 }
 /*# sourceMappingURL=style.css.map */
