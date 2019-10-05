@@ -1,6 +1,6 @@
 @import "var";
 @import "mixins";
-// @import  "reset";
+@import "reset";
 
 
 
@@ -57,11 +57,7 @@ body {
 
 }
 
-@mixin rect($width, $bgc) {
-    width: $width;
-    height: $width;
-    background-color: $bgc;
-}
+
 
 .rect {
     @include rect(180px, #00ffdd);
@@ -77,21 +73,12 @@ body {
 }
 
 
-@mixin btn($classname, $width, $bgc) {
-    #{$classname} {
-        width: $width;
-        height: $width;
-        background-color: $bgc;
-    }
-}
+
 
 
 @include btn(".btns", 300px, #333);
 
-@mixin boxsizing($value) {
-    -webkit-box-sizing: $value;
-    box-sizing: $value;
-}
+
 
 .box {
     @include boxsizing(border-box);
@@ -99,40 +86,91 @@ body {
 
 
 @mixin rect_01($width:400px, $height:300px) {
-    .rect01 {
-        width: $width;
-        height: $height;
+    width: $width;
+    height: $height;
+}
+
+
+
+@include btn_module("btn_wide", 300px, 40px, #f20, #333, 1px solid #333);
+
+@include btn_module("btn_big", 500px, 50px, #00a2ff, rgb(26, 26, 26), 2px solid #333);
+
+
+%green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+@mixin green() {
+    background-color: green;
+}
+
+
+
+.box-green {
+    @include rect_01();
+    @extend %green;
+    //   @include green();
+
+}
+
+
+.box-yellow {
+    @include rect_01();
+    @extend .yellow;
+}
+
+.width {
+    width: 100rem + 100rem;
+    height: 30 - 20px;
+    font-size: 10 * 10px;
+    margin: (100/10) + px;
+
+}
+
+
+
+@include fontsize($fontBasesize);
+
+
+
+.box_area {
+
+    $margintop: 50px;
+
+    @if ($margintop <=20px) {
+        margin-top: $margintop
+    }
+
+    @else {
+        margin-top: ($margintop/2)
     }
 }
 
-@include rect_01(500px , 300px);
 
-
-@mixin btn_module($btn_name,$width, $height, $bgc, $color, $border:null) {
-    .#{$btn_name} {
-        text-align: center;
-        width: $width;
-        height: $height;
-        line-height: $height;
+@mixin section($i, $bgc) {
+    .section_#{$i} {
+        width: 100vw;
+        height: 100vh;
         background-color: $bgc;
-        color: $color;
-        cursor: pointer;
-        border: $border;
-        &:hover {
-            background-color: darken($bgc, 40%);
-
-        }
+        @content
     }
+};
+
+
+@include section('01' , #333){
+   h2 {
+       color: #00ff2a;
+   }
 }
 
 
-@include btn_module("btn_wide" ,300px, 40px , #f20 ,#333 );
-
-
-
-@include btn_module("btn_big" ,500px, 50px , #00a2ff ,rgb(26, 26, 26) , 2px solid #333 )
-
-
-
-
-
+@include section('02' , rgb(252, 0, 0)){
+    h2 {
+        color: #00b7ff;
+    }
+ }

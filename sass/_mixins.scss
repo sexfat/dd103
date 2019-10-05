@@ -4,3 +4,69 @@
     width: 80%;
     background-color: rgb(235, 10, 10);
 }
+
+
+@mixin rect($width, $bgc) {
+    width: $width;
+    height: $width;
+    background-color: $bgc;
+}
+
+@mixin btn($classname, $width, $bgc) {
+    #{$classname} {
+        width: $width;
+        height: $width;
+        background-color: $bgc;
+    }
+}
+
+@mixin boxsizing($value) {
+    -webkit-box-sizing: $value;
+    box-sizing: $value;
+}
+
+@mixin btn_module($btn_name, $width, $height, $bgc, $color, $border:null ,$radius: 'false') {
+    .#{$btn_name} {
+        text-align: center;
+        width: $width;
+        height: $height;
+        line-height: $height;
+        background-color: $bgc;
+        @if ($radius == 'true') {
+           border-radius: 10px
+        }
+        color: $color;
+        cursor: pointer;
+        border: $border;
+
+        &:hover {
+            background-color: darken($bgc, 40%);
+
+        }
+    }
+}
+
+
+
+@mixin fontsize($fontBasesize) {
+    h1 {
+        font-size: $fontBasesize * 5
+    }
+
+    h2 {
+        font-size: $fontBasesize * 4.3
+    }
+
+    h3 {
+        font-size: $fontBasesize * 3.4
+    }
+
+    h4 {
+        font-size: $fontBasesize * 2.1
+    }
+
+    h5 {
+        font-size: $fontBasesize * 1.4
+    }
+
+}

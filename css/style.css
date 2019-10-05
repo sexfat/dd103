@@ -1,5 +1,55 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
 body {
-  font-size: 16px;
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-size: 20px;
   margin: 10px 0 0;
   padding: 20px;
   color: #bd6060;
@@ -81,11 +131,6 @@ body .wrapper footer {
   box-sizing: border-box;
 }
 
-.rect01 {
-  width: 500px;
-  height: 300px;
-}
-
 .btn_wide {
   text-align: center;
   width: 300px;
@@ -94,6 +139,7 @@ body .wrapper footer {
   background-color: #f20;
   color: #333;
   cursor: pointer;
+  border: 1px solid #333;
 }
 
 .btn_wide:hover {
@@ -113,5 +159,74 @@ body .wrapper footer {
 
 .btn_big:hover {
   background-color: #002033;
+}
+
+.box-green {
+  background-color: green;
+}
+
+.yellow, .box-yellow {
+  background-color: yellow;
+}
+
+.box-green {
+  width: 400px;
+  height: 300px;
+}
+
+.box-yellow {
+  width: 400px;
+  height: 300px;
+}
+
+.width {
+  width: 200rem;
+  height: 10px;
+  font-size: 100px;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+h2 {
+  font-size: 86px;
+}
+
+h3 {
+  font-size: 68px;
+}
+
+h4 {
+  font-size: 42px;
+}
+
+h5 {
+  font-size: 28px;
+}
+
+.box_area {
+  margin-top: 25px;
+}
+
+.section_01 {
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
+}
+
+.section_01 h2 {
+  color: #00ff2a;
+}
+
+.section_02 {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fc0000;
+}
+
+.section_02 h2 {
+  color: #00b7ff;
 }
 /*# sourceMappingURL=style.css.map */
