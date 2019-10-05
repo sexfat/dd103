@@ -1,9 +1,12 @@
-@import "var" ; 
-@import  "reset";
+@import "var";
+@import "mixins";
+// @import  "reset";
+
+
 
 
 body {
-    font-size: $fontsize;
+    font-size: $fontBasesize;
     margin: $marign;
     padding: 20px;
     color: $color;
@@ -12,16 +15,17 @@ body {
 
     .wrapper {
         width: 1200px;
-        margin: 0 auto;
+        @include margincenter();
 
         header {
             background-color: #333;
-            height: 300px;
+            height: $height;
 
             .logo {
                 width: 300px;
-                height: 20px;
-                 background-color: rgb(255, 4, 4);
+                min-height: 20px;
+                background-color: rgb(255, 4, 4);
+                color: rgb(80, 80, 80);
             }
 
         }
@@ -32,9 +36,103 @@ body {
 
         footer {
             height: 300px;
-            background-color: rgb(14, 190, 235);
+            background-color: rgb(207, 207, 207);
 
 
         }
     }
 }
+
+
+.box01 {
+    @include margincenter();
+}
+
+.box2 {
+    @include margincenter();
+}
+
+.box3 {
+    @include margincenter();
+
+}
+
+@mixin rect($width, $bgc) {
+    width: $width;
+    height: $width;
+    background-color: $bgc;
+}
+
+.rect {
+    @include rect(180px, #00ffdd);
+}
+
+
+.rect300 {
+    @include rect(300px, #00ff2a);
+}
+
+.rect400 {
+    @include rect(120px, rgb(255, 0, 0))
+}
+
+
+@mixin btn($classname, $width, $bgc) {
+    #{$classname} {
+        width: $width;
+        height: $width;
+        background-color: $bgc;
+    }
+}
+
+
+@include btn(".btns", 300px, #333);
+
+@mixin boxsizing($value) {
+    -webkit-box-sizing: $value;
+    box-sizing: $value;
+}
+
+.box {
+    @include boxsizing(border-box);
+}
+
+
+@mixin rect_01($width:400px, $height:300px) {
+    .rect01 {
+        width: $width;
+        height: $height;
+    }
+}
+
+@include rect_01(500px , 300px);
+
+
+@mixin btn_module($btn_name,$width, $height, $bgc, $color, $border:null) {
+    .#{$btn_name} {
+        text-align: center;
+        width: $width;
+        height: $height;
+        line-height: $height;
+        background-color: $bgc;
+        color: $color;
+        cursor: pointer;
+        border: $border;
+        &:hover {
+            background-color: darken($bgc, 40%);
+
+        }
+    }
+}
+
+
+@include btn_module("btn_wide" ,300px, 40px , #f20 ,#333 );
+
+
+
+@include btn_module("btn_big" ,500px, 50px , #00a2ff ,rgb(26, 26, 26) , 2px solid #333 )
+
+
+
+
+
