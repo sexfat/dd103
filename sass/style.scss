@@ -1,6 +1,6 @@
 @import "var";
 @import "mixins";
-// @import "reset";
+@import "reset";
 @import "desktop";
 @import "medium";
 @import "small";
@@ -270,6 +270,86 @@ body {
 
 @include eachlist(a1, a2) {
     &:hover {
-        opacity: 80%;
+        opacity: .5;
     }
 }
+
+
+$maps : (h1 : 30px,
+    h2 : 26px,
+    h3 : 20px,
+    h4 : 18px,
+    h5 : 16px);
+
+// h1 {
+//     font-size: map-get($maps, h1);
+// }
+
+// h2 {
+//     font-size: map-get($maps, h2);
+// }
+
+// h3 {
+//     font-size: map-get($maps, h3);
+// }
+
+@each $title,
+$num in $maps {
+    #{$title} {
+        font-size: $num;
+    }
+}
+
+$color_theme : (main_page : #fff,
+    aboutus_page : #333,
+    contact_page : #999,
+    product_page : #666);
+
+@each $themeName,
+$color in $color_theme {
+
+    .#{$themeName}_wrapper {
+        background-color: $color;
+    }
+}
+
+// $btncolor : (primary : rgb(100, 195, 255),
+//     secondary : rgb(198, 198, 198),
+//     success : rgb(147, 249, 127),
+// );
+
+
+
+@mixin btn_theme($btncolor){
+
+    @each $title,$bgcolor in $btncolor {
+        .btn_#{$title} {
+            background-color: $bgcolor;
+            padding: 10px;
+            width: 120px;
+            font-size: 16px;
+            line-height: 30px;
+            border-radius: 5px;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+            transition: .4s all;
+            &:hover {
+                background-color: darken($bgcolor, 40);
+            }
+
+        }
+    }
+}
+
+@include btn_theme (
+    (primary : rgb(255, 217, 2),
+    secondary : rgb(198, 198, 198),
+    success : rgb(147, 249, 127),
+)
+)
+
+
+
+
+   
