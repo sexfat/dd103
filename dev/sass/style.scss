@@ -320,20 +320,22 @@ $color in $color_theme {
 
 
 
-@mixin btn_theme($btncolor){
+@mixin btn_theme($btncolor) {
 
-    @each $title,$bgcolor in $btncolor {
+    @each $title,
+    $bgcolor in $btncolor {
         .btn_#{$title} {
             background-color: $bgcolor;
             padding: 10px;
             width: 120px;
             font-size: 16px;
             line-height: 30px;
-            border-radius: 5px;
+            border-radius: 6px;
             text-align: center;
-            color: #fff;
+            color: rgb(240, 240, 240);
             cursor: pointer;
             transition: .4s all;
+
             &:hover {
                 background-color: darken($bgcolor, 40);
             }
@@ -342,14 +344,7 @@ $color in $color_theme {
     }
 }
 
-@include btn_theme (
-    (primary : rgb(255, 217, 2),
-    secondary : rgb(198, 198, 198),
-    success : rgb(147, 249, 127),
-)
-)
-
-
-
-
-   
+@include btn_theme ((primary : rgb(255, 217, 2),
+        secondary : rgb(198, 198, 198),
+        success : rgb(147, 249, 127),
+    ))
