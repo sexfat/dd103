@@ -2,11 +2,13 @@
 var gulp = require('gulp');
 var cleanCSS = require('gulp-clean-css');
 var sass = require('gulp-sass');
+var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
 
 
 //搬家
 gulp.task('concat', function () {
-    gulp.src('dev/js/*.js').pipe(gulp.dest('dest/js'));
+    gulp.src('dev/*.html').pipe(gulp.dest('dest/'));
 })
 
 //minicss
@@ -26,6 +28,20 @@ gulp.task('sass', function () {
   //監看
   gulp.task('watch', function () {
     gulp.watch('dev/sass/*.scss', ['sass']);
+});
+
+
+gulp.task('default', function () {
+    browserSync.init({
+        server: {
+            //根目錄
+            baseDir: "./dest",
+            index: "index.html"
+        }
+    });
+
+    gulp.watch(["dev/sass/*.scss", "dev/sass/**/*.scss"], ['sass']).on('change', reload);
+    gulp.watch(["dev/*.html" , "dev/**/*.html"] , ['concat']).on('change', reload);
 });
 
 
