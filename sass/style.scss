@@ -1,6 +1,6 @@
 @import "var";
 @import "mixins";
-@import "reset";
+// @import "reset";
 @import "desktop";
 @import "medium";
 @import "small";
@@ -253,8 +253,23 @@ body {
 }
 
 
+@mixin eachlist($list...) {
+
+    @each $var in $list {
+        .img_#{$var} {
+            background-image: url('img/#{$var}.jpg');
+            width: 70px;
+            height: 30px;
+            cursor: pointer;
+            @content;
+            //@include margincenter();
+        }
+    }
+}
 
 
-
-
-
+@include eachlist(a1, a2) {
+    &:hover {
+        opacity: 80%;
+    }
+}
