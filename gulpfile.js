@@ -3,7 +3,9 @@ var gulp = require('gulp');
 var cleanCSS = require('gulp-clean-css');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
+var fileinclude = require('gulp-file-include');
 var reload = browserSync.reload;
+
 
 
 //搬家
@@ -31,6 +33,21 @@ gulp.task('sass', function () {
 });
 
 
+
+
+gulp.task('template', function () {
+    gulp.src(['dev/*.html'])
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('dest'));
+});
+
+
+
+
+
 gulp.task('default', function () {
     browserSync.init({
         server: {
@@ -41,7 +58,7 @@ gulp.task('default', function () {
     });
 
     gulp.watch(["dev/sass/*.scss", "dev/sass/**/*.scss"], ['sass']).on('change', reload);
-    gulp.watch(["dev/*.html" , "dev/**/*.html"] , ['concat']).on('change', reload);
+    gulp.watch(["dev/*.html" , "dev/**/*.html"] , ['template']).on('change', reload);
 });
 
 

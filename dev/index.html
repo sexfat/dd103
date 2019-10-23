@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="wrapper">
-        <header>
-            <div class="logo"><h1>logos</h1> </div>
+    @@include('./template/metacss.html')
+    @@include('./template/title.html', {
+        "title": "首頁"
+        })
 
-        </header>
+    
+</head>
+
+<body>
+   @@include('./template/header.html')
+    <div class="wrapper">
+
         <div class="content">
             <div class="rect">正方形</div>
             <div class="rect300"></div>
@@ -26,12 +30,12 @@
                 <h2>section_02</h2>
             </div>
             <div class="section_03">
-                    <div class="btn_primary">primary</div>
-                    <div class="btn_secondary">secondary</div>
-                    <div class="btn_success">success</div>
+                <div class="btn_primary">primary</div>
+                <div class="btn_secondary">secondary</div>
+                <div class="btn_success">success</div>
 
             </div>
-            
+
 
         </div>
         <footer>
@@ -39,4 +43,5 @@
         </footer>
     </div>
 </body>
+
 </html>
