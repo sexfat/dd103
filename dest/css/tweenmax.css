@@ -3,19 +3,15 @@ body {
   margin: 0;
   padding: 0; }
 
-.section {
-  width: 100vw;
-  height: 100vh; }
-
-.section {
+section {
   width: 100vw;
   height: 100vh; }
 
 .section_01 {
-  background-color: #2e2e2e; }
+  background-color: #3c3c3c; }
 
 .box {
-  width: 300px;
-  height: 50px;
+  width: 200px;
+  height: 30px;
   background-color: #00ffc8;
   margin-top: 10px; }
