@@ -86,3 +86,16 @@ var scene = new ScrollMagic.Scene({
      duration: 400,
      offset: 100
 }).setTween(title03).addIndicators().addTo(controller);
+
+// 第四個場景
+
+var d1= TweenMax.to('.d1' ,1 ,{
+    x: 200
+})
+
+
+var scene2  = new ScrollMagic.Scene({
+    triggerElement: '#tripper_02',
+     triggerHook: 0
+}).setClassToggle('.section_04' , 'on').setTween(d1).addIndicators().addTo(controller);
+

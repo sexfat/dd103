@@ -40,10 +40,18 @@ background-color: rgb(255, 13, 13);
     .box {
       margin: 0 auto;
       text-align: center;
-
+    }
+    .c1 {
+       position: relative;
+       top: 200px; 
     }
 }
 
 .section_04 {
-    background-color: rgb(231, 255, 202)
+    background-color: rgb(231, 255, 202);
+    transition: all 1s ease-in-out;
+        &.on {
+            background-color: rgb(240, 0, 0);
+        }
 }
+

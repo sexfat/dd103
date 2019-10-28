@@ -31,6 +31,12 @@ section {
   .section_03 .box {
     margin: 0 auto;
     text-align: center; }
+  .section_03 .c1 {
+    position: relative;
+    top: 200px; }
 
 .section_04 {
-  background-color: #e7ffca; }
+  background-color: #e7ffca;
+  transition: all 1s ease-in-out; }
+  .section_04.on {
+    background-color: #f00000; }
