@@ -34,7 +34,6 @@ gulp.task('sass', function () {
 
 
 
-
 gulp.task('template', function () {
     gulp.src(['dev/*.html'])
         .pipe(fileinclude({
@@ -47,13 +46,12 @@ gulp.task('template', function () {
 
 
 
-
 gulp.task('default', function () {
     browserSync.init({
         server: {
             //根目錄
             baseDir: "./dest",
-            index: "index.html"
+            index: "tweenmax.html"
         }
     });
 
