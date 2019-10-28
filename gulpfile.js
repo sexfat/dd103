@@ -13,6 +13,10 @@ gulp.task('concat', function () {
     gulp.src('dev/*.html').pipe(gulp.dest('dest/'));
 })
 
+gulp.task('concatjs', function () {
+    gulp.src('dev/js/*.js').pipe(gulp.dest('dest/js/'));
+})
+
 //minicss
 gulp.task('minicss', function () {
     return gulp.src('dev/css/*.css')
@@ -57,6 +61,7 @@ gulp.task('default', function () {
 
     gulp.watch(["dev/sass/*.scss", "dev/sass/**/*.scss"], ['sass']).on('change', reload);
     gulp.watch(["dev/*.html" , "dev/**/*.html"] , ['template']).on('change', reload);
+    gulp.watch(["dev/js/*.js"] , ['concatjs']).on('change', reload);
 });
 
 
