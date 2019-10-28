@@ -30,9 +30,35 @@ TweenMax.fromTo('.a3', 4,{
 
 TweenMax.staggerFromTo('.a4' , 1 ,{
     x: 300
+   
 },{
+    ease: Elastic.easeOut.config(1, 0.3),
     x:600
 },0.5);
+
+TweenMax.to('.a5' , 1 , {
+  x:200,
+  repeat: -1,
+  repeatDelay: .6, 
+  yoyo: true
+});
+// TweenMax.from('.a5' , 1 , {
+//     x:100
+//   },{
+//     x: 200 
+//   })
+
+var Tl = new TimelineMax();
+
+Tl.to('.b1',1, {
+   x: 100
+}).to('.b2' ,1, {
+    y: 100
+})
+
+
+
+
 
 
 
