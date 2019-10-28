@@ -27,3 +27,12 @@ TweenMax.fromTo('.a3', 4,{
 }, {
     x: 600
 })
+
+TweenMax.staggerFromTo('.a4' , 1 ,{
+    x: 300
+},{
+    x:600
+},0.5);
+
+
+
