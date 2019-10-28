@@ -48,12 +48,26 @@ TweenMax.to('.a5' , 1 , {
 //     x: 200 
 //   })
 
-var Tl = new TimelineMax();
+var Tl = new TimelineMax({
+  repeat: 1,
+  repeatDelay: .2,
+  yoyo: true
 
-Tl.to('.b1',1, {
-   x: 100
-}).to('.b2' ,1, {
-    y: 100
+
+});
+
+// Tl.to('.b1',1, {
+//    x: 100
+// }).to('.b1' ,1, {
+//     y: 100
+// }).to('.b1', 1, {
+//     x: 300,
+//     scale: 2
+// });
+
+TweenMax.to('.b2',1,{
+   rotation: 180,
+   transformOrigin : 'bottom top'
 })
 
 
