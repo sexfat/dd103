@@ -48,13 +48,13 @@ TweenMax.to('.a5' , 1 , {
 //     x: 200 
 //   })
 
-var Tl = new TimelineMax({
-  repeat: 1,
-  repeatDelay: .2,
-  yoyo: true
+// var Tl = new TimelineMax({
+//   repeat: 1,
+//   repeatDelay: .2,
+//   yoyo: true
 
 
-});
+// });
 
 // Tl.to('.b1',1, {
 //    x: 100
@@ -65,10 +65,19 @@ var Tl = new TimelineMax({
 //     scale: 2
 // });
 
-TweenMax.to('.b2',1,{
-   rotation: 180,
-   transformOrigin : 'bottom top'
-})
+// TweenMax.to('.b2',1,{
+//    rotation: 180,
+//    transformOrigin : 'bottom top'
+// })
+TweenMax.fromTo('.b2',1,{
+   x: 100,
+   boxShadow: "0 0 3px rgba(0, 0, 0, 0.2)" //陰影
+ },{
+   X: 200
+    
+ })
+
+
 
 
 
